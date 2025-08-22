@@ -18,10 +18,10 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->words(2, true), // contoh: "Smart Watch"
+            'name' => fake()->words(2, true), 
             'price' => fake()->numberBetween(10000, 5000000),
             'stock' => fake()->numberBetween(1, 100),
-            'image' => 'default.png', // bisa random image juga
+            'image' => 'default.png', 
             'category_id' => Category::inRandomOrder()->first()?->id ?? Category::factory(),
         ];
     }
