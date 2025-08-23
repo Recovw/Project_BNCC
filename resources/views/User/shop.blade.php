@@ -40,7 +40,7 @@
 
 
             {{-- <form action="{{ route('cart.add', $i->id) }}" method="POST" class="mt-auto"> --}}
-            <form action="#" method="POST" class="mt-auto">
+            <form action="{{route('addToCart', $i->id)}}" method="POST" class="mt-auto">
               @csrf
               <input type="hidden" name="qty" value="1">
               <button type="submit" class="btn btn-sm btn-primary w-100">

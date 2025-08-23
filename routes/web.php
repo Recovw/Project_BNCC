@@ -29,7 +29,13 @@ Route::delete('/deleteItem/{id}', [AdminController::class, 'destroy'])->name('de
 Route::get('/', [AuthController::class, 'index'])->name('welcomePage');
 Route::get('/shop', [UserController::class, 'shop'])->name('shop');
 
+//Cart
 Route::get('/cart', [UserController::class, 'index'])->name('showCart');
+Route::post('/cart/invoice', [UserController::class, 'storeInvoice'])->name('storeInvoice');
+
+Route::post('/cart/add/{id}', [UserController::class, 'addToCart'])->name('addToCart');
+Route::get('/cart/remove/{id}', [UserController::class, 'removeCart'])->name('removeCart');
+Route::post('/cart/update', [UserController::class, 'updateCart'])->name('updateCart');
 
 //Login
 Route::get('/login', [AuthController::class, 'showLogin'])->name('showLogin');
