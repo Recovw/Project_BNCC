@@ -24,7 +24,7 @@
     <tbody>
         @foreach($items as $item)
             <tr>
-                <td>{{ $item->product_id }}</td> {{-- nanti bisa diganti relasi product --}}
+                <td>{{ $item->product_id }}</td> 
                 <td>{{ $item->quantity }}</td>
                 <td>Rp {{ number_format($item->subtotal,0,',','.') }}</td>
             </tr>

@@ -54,7 +54,6 @@ class UserController extends Controller
                 'total' => 0, 
             ]);
 
-            // Masukkan item dari cart ke tabel invoice_items
             foreach ($cart as $id => $item) {
                 $subtotal = $item['price'] * $item['quantity'];
                 $total += $subtotal;
