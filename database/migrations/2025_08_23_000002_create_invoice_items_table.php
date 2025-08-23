@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('invoice_items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('invoice_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('items')->onDelete('cascade');
             $table->integer('quantity');
             $table->integer('subtotal');
             $table->timestamps();

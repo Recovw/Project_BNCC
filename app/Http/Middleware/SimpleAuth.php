@@ -30,7 +30,7 @@ class SimpleAuth
 
         if (!empty($roles) && !in_array($userRole, $roles))
         {
-            abort(403, 'Unauthorized Access');
+            return redirect()->route('welcomePage');
         }
 
         return $next($request);

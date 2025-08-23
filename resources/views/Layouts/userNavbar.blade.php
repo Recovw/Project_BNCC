@@ -36,6 +36,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('showCart')}}">Cart</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('invoices')}}">Invoice</a>
+                    </li>
                 </ul>
 
 

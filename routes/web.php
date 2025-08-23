@@ -21,7 +21,9 @@ Route::get('/updateItem/{id}', [AdminController::class, 'showUpdate'])->name('sh
 Route::post('/updateItem/{id}', [AdminController::class, 'update'])->name('updateItem')->middleware('simple.auth:admin');
 
 //Delete
-Route::delete('/deleteItem/{id}', [AdminController::class, 'destroy'])->name('deleteItem')->middleware('simple.auth:admin');
+Route::delete('/deleteItem/{id}', [AdminController::class, 'destroyItem'])->name('deleteItem')->middleware('simple.auth:admin');
+Route::delete('/categories/{id}', [AdminController::class, 'destroyCategory'])->name('deleteCategory')->middleware('simple.auth:admin');
+
 
 //User  
 
@@ -36,6 +38,11 @@ Route::post('/cart/invoice', [UserController::class, 'storeInvoice'])->name('sto
 Route::post('/cart/add/{id}', [UserController::class, 'addToCart'])->name('addToCart');
 Route::get('/cart/remove/{id}', [UserController::class, 'removeCart'])->name('removeCart');
 Route::post('/cart/update', [UserController::class, 'updateCart'])->name('updateCart');
+Route::get('/checkout', [UserController::class, 'checkout'])->name('checkout');
+
+//Invoice
+Route::get('/invoices', [UserController::class, 'invoices'])->name('invoices');
+Route::get('/invoices/{id}', [UserController::class, 'showInvoice'])->name('showInvoice');
 
 //Login
 Route::get('/login', [AuthController::class, 'showLogin'])->name('showLogin');

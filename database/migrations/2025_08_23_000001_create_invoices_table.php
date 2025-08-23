@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) 
         {
         $table->id();
-        $table->string('invoice_number')->unique(); // nomor invoice otomatis
+        $table->string('invoice_number')->unique(); 
         $table->string('shipping_address', 100);
-        $table->string('postal_code', 5);
+        $table->string('postal_code');
         $table->integer('total');
         $table->timestamps();
         });

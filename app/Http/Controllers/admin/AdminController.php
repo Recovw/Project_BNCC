@@ -163,7 +163,7 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroyItem($id)
     {
         $item = Item::findOrFail($id);
 
@@ -174,5 +174,14 @@ class AdminController extends Controller
         $item->delete();
 
         return redirect()->route('seeItems')->with('success', 'Item deleted successfully!');
-        }
+    }
+
+    public function destroyCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+
+        return redirect()->back()->with('success', 'Category deleted successfully!');
+    }
+
 }

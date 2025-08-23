@@ -54,7 +54,7 @@
                 <ul class="navbar-nav ms-auto">
                     @auth
                         <li class="nav-item d-flex align-items-center">
-                            <span class="navbar-text me-2">Welcome, User {{ Auth::user()->name }}</span>
+                            <span class="navbar-text me-2">Welcome, Admin {{ Auth::user()->name }}</span>
                         </li>
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="post" class="d-inline">

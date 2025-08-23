@@ -6,7 +6,7 @@
 <div class="container py-4">
 
   @if($items->count() === 0)
-    <div class="alert alert-info text-center">Belum ada item yang tersedia</div>
+    <div class="alert alert-info text-center">The shop is out of stock, please wait until the item is restocked.</div>
   @endif
 
   <div class="row g-4">
@@ -35,7 +35,7 @@
                 <span class="text-success mb-2">Stock: {{ $i->stock }}</span>
             @else
                 <span class="text-danger mb-2">Stock: {{ $i->stock }}</span>
-                <span class="text-danger mb-2">Barang sudah habis, silahkan tunggu hingga barang di-restock ulang</span>
+                <span class="text-danger mb-2">The item is out of stock, please wait until the item is restocked.</span>
             @endif
 
 

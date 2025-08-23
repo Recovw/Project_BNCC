@@ -65,11 +65,22 @@
         </form>
 
         <h5 class="mt-4 text-center">Existing Categories</h5>
-        <ul class="list-group">
-            @foreach ($categories as $c)
-                <li class="list-group-item text-center">{{ $c->name }}</li>
-            @endforeach
-        </ul>
+<ul class="list-group">
+    @foreach ($categories as $c)
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>{{ $c->name }}</span>
+            <form action="{{ route('deleteCategory', $c->id) }}" 
+                  method="POST" 
+                  onsubmit="return confirm('Are you sure want to delete this category?')" 
+                  class="m-0">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </form>
+        </li>
+    @endforeach
+</ul>
+
     </div>
 </div>
 @endsection
